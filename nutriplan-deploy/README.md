@@ -26,3 +26,11 @@ En Android: Chrome → menú → **Instalar app**.
 
 ## Actualizar
 Sube el nuevo `index.html` al repositorio; Vercel lo publica solo y la app se actualiza al volver a abrirla con conexión.
+
+## Si la IA falla
+En la app: Perfil → **Probar IA**. Te dice exactamente qué falta:
+- "Falta ANTHROPIC_API_KEY" → añádela en Vercel y vuelve a desplegar (Deployments → ⋯ → Redeploy).
+- "La contraseña guardada no coincide" → Perfil → **Contraseña** y escríbela igual que `APP_PASSWORD`.
+- "No se encontró /api/ai (404)" → la carpeta `api/` debe estar en la raíz del repositorio.
+- "HTTP 504" → confirma que subiste el `vercel.json` nuevo (incluye `maxDuration: 60`).
+- "Tu cuenta de Anthropic no tiene saldo" → añade créditos en console.anthropic.com.
